@@ -6,7 +6,7 @@ GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
 GOGET=$(GOCMD) get
-GOGET=$(GOCMD) mod
+GOMOD=$(GOCMD) mod
 GOLIST=$(GOCMD) list
 
 BINARY_NAME=swag
@@ -47,11 +47,11 @@ clean:
 
 .PHONY: install
 download:
-	go mod download
+	$(GOMOD) download
 
 .PHONY: vendor
 vendor:
-	go mod vendor
+	$(GOMOD) vendor
 
 .PHONY: lint
 lint:

@@ -2,19 +2,13 @@ language: go
 sudo: false
 
 go:
-  - 1.9.x
   - 1.10.x
   - 1.11.x
-
-matrix:
-  fast_finish: true
-  include:
-  - go: 1.11.x
+  - 1.12.x
 
 install:
   - make download
-  - if [[ "${GO111MODULE}" = "on" ]]; then make tools; fi
-  
+
 script:
   - make fmt-check
   - make lint

@@ -78,3 +78,7 @@ fmt-check:
 view-covered:
 	$(GOTEST) -coverprofile=cover.out $(TARGET)
 	$(GOCMD) tool cover -html=cover.out
+
+.PHONY: tools
+tools:
+	go install golang.org/x/lint/golint;

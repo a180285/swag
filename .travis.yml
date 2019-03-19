@@ -10,10 +10,9 @@ matrix:
   fast_finish: true
   include:
   - go: 1.11.x
-    env: GO111MODULE=on
 
 install:
-  - make install
+  - make download
   - if [[ "${GO111MODULE}" = "on" ]]; then make tools; fi
   
 script:
